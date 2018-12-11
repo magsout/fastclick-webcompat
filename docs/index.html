@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>fastclick webcompat</title>
+    <meta name="description" content="fastclick webcompat">
+  </head>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+  </script>
+  <body>
+    <div>
+        <div>
+            <label for="browser">Select using fastclick</label>
+            <select id="browser" name="browser">
+                <option value="firefox" selected>Firefox</option>
+                <option value="chrome">Chrome</option>
+                <option value="edge">Edge</option>
+                <option value="opera">Opera</option>
+            </select>
+        </div>
+        <div>
+            <label for="engine">Select not using fastclick</label>
+             <select class="needsclick" id="engine" name="engine">
+               <option value="Gecko" selected>Gecko</option>
+               <option value="blink">Blink</option>
+               <option value="webkit">Webkit</option>
+            </select>
+        </div>
+    </div>
+    <script type="application/javascript" src="./fastclick.js"></script>
+  </body>
+</html>
